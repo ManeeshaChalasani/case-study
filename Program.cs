@@ -1,25 +1,63 @@
 ﻿using System;
 
-namespace assignment1
+namespace assignment2
 {
-    class Program
+    class Circle
     {
-        enum days {Monday=1,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday}
-        static void Main(string[] args)
+        double radius, diameter, area;
+        public double calcradius(double radius)
         {
-            Console.WriteLine("Enter a number:");
-            int number = int.Parse(Console.ReadLine());
-            int day1 = (int)(days.Monday);
-            int day2 = (int)(days.Tuesday);
-            int day3 = (int)(days.Wednesday);
-            int day4 = (int)(days.Thursday);
-            int day5 = (int)(days.Friday);
-            int day6 = (int)(days.Saturday);
-            int day7 = (int)(days.Sunday);
-            if((number>=day1)&&(number<=day5))
-            Console.WriteLine($"its a working day");
-           else
-            Console.WriteLine("its a holiday");
+            return radius;
+        }
+        public double calcdiameter(double radius)
+        {
+            return radius * 2;
+        }
+        public double calcarea(double radius)
+        {
+            return 3.14 * radius * radius;
+        }
+        public void SetRadius(double radius)
+        {
+             this.radius = radius; 
+        }
+        public double GetRadius()
+        {
+            return this.radius;
+
+        }
+    }
+    class TestCircle
+    { 
+        static void Main()
+        {
+            
+            Circle circular = new Circle();
+            Console.WriteLine(circular.calcradius(25.00));
+            Console.WriteLine(circular.calcdiameter(25.00));
+            Console.WriteLine(circular.calcarea(25.00));
+            circular.SetRadius(30.00);
+            Console.WriteLine($"changed radius is { circular.calcradius(30.00)}");
+            Console.WriteLine($"radius is {circular.GetRadius()}");
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+//Circle is a class with property radius and methods setRadius(), getRadius(), calcDiameter(), calcArea()
+    //.Use double precision for everything. Write appropriate driver program to test the methods.  
+
+
+
+
+
+
+
